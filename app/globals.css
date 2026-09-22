@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+:root {
+  /* Light Mode Background & Glow */
+  --background: oklch(0.984 0.005 247);      /* #F8FAFC crisp ice white */
+  --foreground: oklch(0.208 0.04 265);       /* #0F172A dark slate text */
+  --primary: oklch(0.546 0.215 263);          /* #2563EB cobalt blue */
+  --primary-foreground: oklch(0.984 0.005 247); /* #F8FAFC */
+  --muted: oklch(0.48 0.035 257);             /* #64748B */
+  --muted-foreground: oklch(0.71 0.035 251);  /* #94A3B8 */
+  --accent: oklch(0.75 0.145 238);            /* #38BDF8 */
+  --accent-foreground: oklch(0.208 0.04 265); /* #0F172A */
+  --destructive: oklch(0.55 0.22 25);         /* #EF4444 */
+  --destructive-foreground: oklch(0.984 0.005 247); /* #F8FAFC */
+  --border: oklch(0.78 0.035 252 / 70%);      /* crisp translucent border */
+  --glass: oklch(1 0 0 / 64%);                /* 64% white glass fill */
+  --glass-border: oklch(0.78 0.035 252 / 70%);/* crisp translucent border */
+  --page-glow: oklch(0.7 0.13 245 / 20%);     /* soft blue top canopy */
+  --shadow-color: oklch(0.35 0.06 260 / 18%);
+  --radius: 0.75rem;
+}
+
+.dark {
+  /* Dark Mode Background & Glow */
+  --background: oklch(0.16 0.035 264);       /* #0B1120 deep midnight navy */
+  --foreground: oklch(0.96 0.012 250);       /* #F8FAFC crisp white text */
+  --primary: oklch(0.75 0.145 238);          /* #38BDF8 royal electric blue */
+  --primary-foreground: oklch(0.16 0.035 264); /* #0B1120 */
+  --muted: oklch(0.71 0.035 251);             /* #94A3B8 */
+  --muted-foreground: oklch(0.48 0.035 257);  /* #64748B */
+  --accent: oklch(0.78 0.145 238);            /* #60A5FA */
+  --accent-foreground: oklch(0.96 0.012 250); /* #F8FAFC */
+  --destructive: oklch(0.55 0.22 25);         /* #EF4444 */
+  --destructive-foreground: oklch(0.984 0.005 247); /* #F8FAFC */
+  --border: oklch(0.76 0.045 249 / 20%);      /* subtle light rim */
+  --glass: oklch(0.25 0.04 263 / 48%);       /* 48% dark navy glass fill */
+  --glass-border: oklch(0.76 0.045 249 / 20%);/* subtle light rim */
+  --page-glow: oklch(0.63 0.17 250 / 15%);    /* electric blue canopy glow */
+  --shadow-color: oklch(0.03 0.015 264 / 72%);
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-glass-border: var(--glass-border);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Base Body Styling */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 180ms ease, color 180ms ease;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-space-grotesk), Arial, Helvetica, sans-serif;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    0 18px 50px -28px var(--shadow-color);
+}
+
+.glass-strong {
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(28px) saturate(170%);
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    0 24px 60px -30px var(--shadow-color);
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.88;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes soundwave {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+.animate-soundwave {
+  animation: soundwave 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Markdown Styles */
+.prose {
+  line-height: 1.6;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.prose li {
+  margin: 0.25rem 0;
+}
+
+.prose p {
+  margin: 0.5rem 0;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+  color: var(--foreground);
+}
+
+.prose h1 {
+  font-size: 1.5rem;
+}
+
+.prose h2 {
+  font-size: 1.25rem;
+}
+
+.prose h3 {
+  font-size: 1.1rem;
+}
+
+.prose code {
+  background: var(--glass);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.prose pre {
+  background: var(--glass);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+}
+
+.prose a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--primary);
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+  color: var(--muted-foreground);
+}
