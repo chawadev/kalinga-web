@@ -48,7 +48,7 @@ interface LogEntry {
 
 export default function KalingaApp() {
   const router = useRouter();
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [showTerminal, setShowTerminal] = useState(false);
