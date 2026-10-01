@@ -44,7 +44,7 @@ export function VoiceOrb({ state = "idle", compact = false, onClick }: VoiceOrbP
             relative grid place-items-center rounded-full 
             border border-primary/30 bg-primary/10 
             backdrop-blur-xl 
-            shadow-[inset_0_1px_18px_rgba(56,189,248,0.22),0_12px_36px_-16px_rgba(37,99,235,0.65)]
+            shadow-[inset_0_1px_18px_rgba(10,149,154,0.22),0_12px_36px_-16px_rgba(10,149,154,0.65)]
             transition-all duration-500
             ${coreSize}
             ${state === "listening" ? "scale-105" : "hover:scale-105"}

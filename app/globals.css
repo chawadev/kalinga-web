@@ -4,19 +4,19 @@
   /* Light Mode Background & Glow */
   --background: oklch(0.984 0.005 247);      /* #F8FAFC crisp ice white */
   --foreground: oklch(0.208 0.04 265);       /* #0F172A dark slate text */
-  --primary: oklch(0.546 0.215 263);          /* #2563EB cobalt blue */
+  --primary: oklch(0.6091 0.1021 199.07);     /* #0A959A teal */
   --primary-foreground: oklch(0.984 0.005 247); /* #F8FAFC */
   --muted: oklch(0.48 0.035 257);             /* #64748B */
   --muted-foreground: oklch(0.71 0.035 251);  /* #94A3B8 */
-  --accent: oklch(0.75 0.145 238);            /* #38BDF8 */
+  --accent: oklch(0.75 0.145 199.07);         /* lighter teal */
   --accent-foreground: oklch(0.208 0.04 265); /* #0F172A */
   --destructive: oklch(0.55 0.22 25);         /* #EF4444 */
   --destructive-foreground: oklch(0.984 0.005 247); /* #F8FAFC */
   --border: oklch(0.78 0.035 252 / 70%);      /* crisp translucent border */
   --glass: oklch(1 0 0 / 64%);                /* 64% white glass fill */
   --glass-border: oklch(0.78 0.035 252 / 70%);/* crisp translucent border */
-  --page-glow: oklch(0.7 0.13 245 / 20%);     /* soft blue top canopy */
-  --shadow-color: oklch(0.35 0.06 260 / 18%);
+  --page-glow: oklch(0.7 0.13 199.07 / 20%);  /* soft teal top canopy */
+  --shadow-color: oklch(0.35 0.06 199.07 / 18%);
   --radius: 0.75rem;
 }
 
@@ -24,22 +24,23 @@
   /* Dark Mode Background & Glow */
   --background: oklch(0.16 0.035 264);       /* #0B1120 deep midnight navy */
   --foreground: oklch(0.96 0.012 250);       /* #F8FAFC crisp white text */
-  --primary: oklch(0.75 0.145 238);          /* #38BDF8 royal electric blue */
+  --primary: oklch(0.70 0.12 199.07);        /* lighter teal for dark mode */
   --primary-foreground: oklch(0.16 0.035 264); /* #0B1120 */
   --muted: oklch(0.71 0.035 251);             /* #94A3B8 */
   --muted-foreground: oklch(0.48 0.035 257);  /* #64748B */
-  --accent: oklch(0.78 0.145 238);            /* #60A5FA */
+  --accent: oklch(0.78 0.145 199.07);         /* lighter teal for dark mode */
   --accent-foreground: oklch(0.96 0.012 250); /* #F8FAFC */
   --destructive: oklch(0.55 0.22 25);         /* #EF4444 */
   --destructive-foreground: oklch(0.984 0.005 247); /* #F8FAFC */
   --border: oklch(0.76 0.045 249 / 20%);      /* subtle light rim */
   --glass: oklch(0.25 0.04 263 / 48%);       /* 48% dark navy glass fill */
   --glass-border: oklch(0.76 0.045 249 / 20%);/* subtle light rim */
-  --page-glow: oklch(0.63 0.17 250 / 15%);    /* electric blue canopy glow */
-  --shadow-color: oklch(0.03 0.015 264 / 72%);
+  --page-glow: oklch(0.63 0.17 199.07 / 15%);  /* teal canopy glow */
+  --shadow-color: oklch(0.03 0.015 199.07 / 72%);
   --radius: 0.75rem;
 }
 
+/* eslint-disable-next-line -- @theme is a Tailwind CSS v4 feature */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
